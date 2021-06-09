@@ -1,0 +1,23 @@
+.logo {
+  &__link {
+    font-weight: 700;
+    color: $light-green;
+    letter-spacing: 1.1px;
+
+    @include phone {
+      font-size: 16px;
+    }
+
+    @include tablets {
+      font-size: 18px;
+    }
+
+    @include desktops {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: #bd48eb;
+    }
+  }
+}

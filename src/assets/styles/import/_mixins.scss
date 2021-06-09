@@ -1,0 +1,29 @@
+@mixin font(
+  $font-family: 'Georgia',
+  $font-size: 14px,
+  $font-weight: 400,
+  $font-style: normal
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin phone {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktops {
+  @media screen and (min-width: 1100px) {
+    @content;
+  }
+}
