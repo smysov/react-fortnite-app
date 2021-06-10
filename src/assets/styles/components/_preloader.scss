@@ -1,0 +1,123 @@
+.preloader {
+  margin-bottom: 60px;
+
+  &__side {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__left,
+  &__right,
+  &__top,
+  &__bottom {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    filter: blur(0.5px);
+
+    @include phone {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include tablets {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__left {
+    background: #fce9a9;
+    left: -70px;
+    animation: left 2s ease infinite;
+  }
+
+  &__right {
+    background: #bfecff;
+  }
+
+  &__top {
+    background: #f8c0fa;
+  }
+
+  &__bottom {
+    background: $light-grey;
+    left: 70px;
+    animation: bottom 2s ease infinite;
+  }
+
+  &__text {
+    position: relative;
+
+    &::before {
+      content: 'Loading';
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      font-size: 18px;
+      color: #fff;
+      transform: translateX(-50%);
+      animation: loading 4s linear infinite;
+
+      @include phone {
+        font-size: 20px;
+      }
+
+      @include tablets {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@keyframes left {
+  0% {
+    left: -70px;
+  }
+  25% {
+    left: 0;
+  }
+  50% {
+    left: 0;
+  }
+  75% {
+    left: 0;
+  }
+  100% {
+    left: -70px;
+  }
+}
+
+@keyframes bottom {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 0;
+  }
+  50% {
+    left: 70px;
+  }
+  75% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+    content: 'Loading';
+  }
+  25% {
+    content: 'Loading.';
+  }
+  50% {
+    content: 'Loading..';
+  }
+  100% {
+    content: 'Loading...';
+  }
+}
