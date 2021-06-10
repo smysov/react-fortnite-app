@@ -1,12 +1,9 @@
 .logo {
   &__link {
+    font-size: 16px;
     font-weight: 700;
-    color: $light-green;
+    color: #fff;
     letter-spacing: 1.1px;
-
-    @include phone {
-      font-size: 16px;
-    }
 
     @include tablets {
       font-size: 18px;
@@ -17,7 +14,7 @@
     }
 
     &:hover {
-      color: #bd48eb;
+      color: rgba($color: #000000, $alpha: 0.6);
     }
   }
 }

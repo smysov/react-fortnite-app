@@ -1,0 +1,25 @@
+.catalog {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__show-more {
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 19px;
+    border-radius: 35px;
+    margin: 0 auto;
+    background: #000;
+    transition: 0.3s all linear;
+
+    &:hover {
+      background: rgba($color: #000000, $alpha: 0.3);
+    }
+  }
+
+  &__hide {
+    @extend .catalog__show-more;
+  }
+}
