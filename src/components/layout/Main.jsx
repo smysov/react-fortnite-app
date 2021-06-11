@@ -11,7 +11,10 @@ function Main() {
   const [isLoading, setIsLoading] = useState(false);
   const [isShowAlert, setIsShowAlert] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
-  const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState(() => {
+    const loadOrderToLocalStorage = JSON.parse(localStorage.getItem('order'));
+    return loadOrderToLocalStorage ? loadOrderToLocalStorage : [];
+  });
 
   const modal = useRef(null);
 
@@ -108,6 +111,7 @@ function Main() {
         document.body.classList.remove('is-hidden');
       }
     });
+    localStorage.setItem('order', JSON.stringify(order));
   });
 
   return (
