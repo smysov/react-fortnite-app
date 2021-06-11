@@ -1,0 +1,14 @@
+.alert {
+  position: fixed;
+  top: 14%;
+  right: 5%;
+  text-align: center;
+  width: 165px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3);
+
+  @include phone {
+    font-size: 16px;
+  }
+}

@@ -8,6 +8,8 @@
   margin-bottom: 30px;
 
   &__item {
+    display: flex;
+    flex-direction: column;
     max-width: 300px;
     transition: 0.3s all ease-in-out;
     padding: 10px;
@@ -27,6 +29,10 @@
 
   &__image {
     height: 100%;
+  }
+
+  &__info {
+    flex-grow: 1;
   }
 
   &__title {

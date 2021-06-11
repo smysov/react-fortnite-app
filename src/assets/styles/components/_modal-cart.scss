@@ -1,0 +1,240 @@
+.modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.4);
+  animation: cart 0.5s linear;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background: $light-purple;
+    width: 95%;
+
+    @include phone {
+      padding: 10px;
+    }
+
+    @media (min-width: 660px) {
+      padding: 15px;
+      max-width: 660px;
+    }
+  }
+
+  &__footer {
+    padding: 5px 10px;
+    background: $light-purple;
+    width: 95%;
+
+    @include phone {
+      padding: 10px;
+    }
+
+    @media (min-width: 660px) {
+      padding: 15px;
+      max-width: 660px;
+    }
+  }
+}
+
+.cart-goods {
+  color: #000;
+  background: #fff;
+  width: 95%;
+  padding: 10px;
+
+  @include phone {
+    padding: 15px 10px;
+  }
+
+  @media (min-width: 660px) {
+    padding: 15px;
+    max-width: 660px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    @include phone {
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: 660px) {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    margin-right: 10px;
+
+    @include phone {
+      margin-right: 15px;
+    }
+
+    @include tablets {
+      margin-right: 20px;
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 300;
+    color: #bebebe;
+
+    @include phone {
+      font-size: 18px;
+    }
+
+    @include tablets {
+      font-size: 22px;
+    }
+  }
+
+  &__price {
+    margin-right: auto;
+  }
+
+  &__empty {
+    text-align: center;
+    color: $light-grey;
+  }
+}
+
+.cart-goods {
+  &__count-buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    margin-right: 10px;
+
+    @include phone {
+      column-gap: 10px;
+      margin-right: 20px;
+      align-items: flex-end;
+    }
+  }
+
+  &__button {
+    position: relative;
+    background: none;
+    border: none;
+    outline: none;
+    width: 20px;
+    height: 20px;
+
+    &_decrease {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 15px;
+        height: 3px;
+        background: #ff5245;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &_increase {
+      &::before {
+        @extend .cart-goods__button_decrease::before;
+        background: #5ec251;
+      }
+      &::after {
+        @extend .cart-goods__button_decrease::before;
+        background: #5ec251;
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+
+  &__count {
+    @include phone {
+      font-size: 16px;
+    }
+
+    @include tablets {
+      font-size: 18px;
+    }
+  }
+}
+
+.cart-goods {
+  &__remove {
+    position: relative;
+    width: 25px;
+    height: 25px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 2px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: crimson;
+    }
+
+    &::after {
+      @extend .cart-goods__remove::before;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__price {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+
+    @include phone {
+      font-size: 16px;
+    }
+
+    @include tablets {
+      font-size: 18px;
+    }
+  }
+
+  &__total {
+    text-align: right;
+  }
+}
+
+.modal {
+  &__close {
+    @extend .cart-goods__remove;
+    &::before {
+      @extend .cart-goods__remove::before;
+      height: 3px;
+      background: #fff;
+    }
+    &::after {
+      @extend .cart-goods__remove::after;
+      height: 3px;
+      background: #fff;
+    }
+  }
+}
+
+@keyframes cart {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
