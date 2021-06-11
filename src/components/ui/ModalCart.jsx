@@ -2,18 +2,28 @@ import GoodsCartItem from '../GoodsCartItem';
 import ModalHeaderCart from './ModalHeaderCart';
 import ModalCartFooter from './ModalCartFooter';
 
-const ModalCart = ({ modalRef, closeCart, order, total, removeFromCart }) => {
+const ModalCart = ({
+  modalRef,
+  closeCart,
+  order,
+  total,
+  removeFromCart,
+  decreaseQuantity,
+  increaseQuantity,
+}) => {
   return (
     <div className='modal' ref={modalRef} onClick={closeCart}>
       <ModalHeaderCart closeCart={closeCart} />
       <ul className='cart-goods' onClick={(e) => e.stopPropagation()}>
         {order.length ? (
-          order.map((item) => {
+          order.map((item, index) => {
             return (
               <GoodsCartItem
                 key={item.id}
                 {...item}
                 removeFromCart={removeFromCart}
+                decreaseQuantity={decreaseQuantity}
+                increaseQuantity={increaseQuantity}
               />
             );
           })

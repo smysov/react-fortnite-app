@@ -4,10 +4,12 @@ import { useState, useEffect, useRef } from 'react';
 import Goods from '../Goods';
 import Cart from '../ui/Cart';
 import ModalCart from '../ui/ModalCart';
+import Alert from '../ui/Alert';
 
 function Main() {
   const [goods, setGoods] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isShowAlert, setIsShowAlert] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
   const [order, setOrder] = useState([]);
 
@@ -24,6 +26,7 @@ function Main() {
   };
 
   const addingGoodsToCart = (product) => {
+    setIsShowAlert(true);
     const newProduct = {
       ...product,
       quantity: 1,
@@ -43,6 +46,7 @@ function Main() {
     } else {
       setOrder([...order, newProduct]);
     }
+    setTimeout(() => setIsShowAlert(false), 500);
   };
 
   const removingGoodsToCart = (id) => {
@@ -52,6 +56,36 @@ function Main() {
 
   const totalPrice = () => {
     return order.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  };
+
+  const decreaseQuantityGoods = (id) => {
+    const newOrder = order.map((item) => {
+      if (item.id === id) {
+        const newQuantity = item.quantity > 1 ? item.quantity - 1 : 1;
+        return {
+          ...item,
+          quantity: newQuantity,
+        };
+      } else {
+        return item;
+      }
+    });
+    setOrder(newOrder);
+  };
+
+  const increaseQuantityGoods = (id) => {
+    const newOrder = order.map((item) => {
+      if (item.id === id) {
+        const newQuantity = item.quantity + 1;
+        return {
+          ...item,
+          quantity: newQuantity,
+        };
+      } else {
+        return item;
+      }
+    });
+    setOrder(newOrder);
   };
 
   useEffect(() => {
@@ -91,8 +125,11 @@ function Main() {
           order={order}
           total={totalPrice}
           removeFromCart={removingGoodsToCart}
+          decreaseQuantity={decreaseQuantityGoods}
+          increaseQuantity={increaseQuantityGoods}
         />
       ) : null}
+      {isShowAlert ? <Alert /> : null}
     </main>
   );
 }
