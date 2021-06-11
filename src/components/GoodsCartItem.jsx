@@ -17,7 +17,7 @@ const GoodsCartItem = ({ title, quantity, price }) => {
           aria-label='Decrease count'></button>
       </div>
       <div className='cart-goods__price'>
-        <p className='cart-goods__text'>{price}$</p>
+        <p className='cart-goods__text'>{price * quantity}$</p>
       </div>
       <button className='cart-goods__remove'></button>
     </li>

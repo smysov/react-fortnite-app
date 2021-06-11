@@ -105,6 +105,11 @@
   &__price {
     margin-right: auto;
   }
+
+  &__empty {
+    text-align: center;
+    color: $light-grey;
+  }
 }
 
 .cart-goods {

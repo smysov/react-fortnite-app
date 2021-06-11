@@ -46,13 +46,7 @@ function Main() {
   };
 
   const totalPrice = () => {
-    let total = [];
-    order.forEach((item) => {
-      total.push(item.price * item.quantity);
-    });
-
-    total = total.reduce((acc, item) => acc + item, 0);
-    return total;
+    return order.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
 
   useEffect(() => {
