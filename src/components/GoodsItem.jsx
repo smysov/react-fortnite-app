@@ -1,12 +1,14 @@
 const GoodsItem = ({ image, name: title, description, price }) => {
   const titleCapitalzed = () => {
-    return `${title[0].toUpperCase()}${title.slice(1).toLowerCase()}`;
+    return title
+      ? `${title[0].toUpperCase()}${title.slice(1).toLowerCase()}`
+      : 'The name is missing';
   };
 
   const descriptionCapitalzed = () => {
-    return `${description[0].toUpperCase()}${description
-      .slice(1)
-      .toLowerCase()}`;
+    return description
+      ? `${description[0].toUpperCase()}${description.slice(1).toLowerCase()}`
+      : 'No description available';
   };
 
   return (
