@@ -9,6 +9,7 @@
   width: 100%;
   height: 100%;
   background: rgba($color: #000000, $alpha: 0.4);
+  animation: cart 0.5s linear;
 
   &__header {
     display: flex;
@@ -226,5 +227,14 @@
       height: 3px;
       background: #fff;
     }
+  }
+}
+
+@keyframes cart {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
   }
 }
