@@ -45,6 +45,16 @@ function Main() {
     }
   };
 
+  const totalPrice = () => {
+    let total = [];
+    order.forEach((item) => {
+      total.push(item.price * item.quantity);
+    });
+
+    total = total.reduce((acc, item) => acc + item, 0);
+    return total;
+  };
+
   useEffect(() => {
     setIsLoading(true);
     fetch(`${API_URL}/shop?lang=en`, {
@@ -76,7 +86,12 @@ function Main() {
       />
       <Cart openCart={openCart} quantity={order.length} />
       {isOpenCart ? (
-        <ModalCart closeCart={closeCart} modalRef={modal} order={order} />
+        <ModalCart
+          closeCart={closeCart}
+          modalRef={modal}
+          order={order}
+          total={totalPrice}
+        />
       ) : null}
     </main>
   );

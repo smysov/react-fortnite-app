@@ -2,7 +2,7 @@ import GoodsCartItem from '../GoodsCartItem';
 import ModalHeaderCart from './ModalHeaderCart';
 import ModalCartFooter from './ModalCartFooter';
 
-const ModalCart = ({ modalRef, closeCart, order }) => {
+const ModalCart = ({ modalRef, closeCart, order, total }) => {
   return (
     <div className='modal' ref={modalRef} onClick={closeCart}>
       <ModalHeaderCart closeCart={closeCart} />
@@ -12,7 +12,7 @@ const ModalCart = ({ modalRef, closeCart, order }) => {
           return <GoodsCartItem key={item.id} {...item} />;
         })}
       </ul>
-      <ModalCartFooter />
+      <ModalCartFooter total={total} />
     </div>
   );
 };
