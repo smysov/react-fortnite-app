@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import GoodsItem from './GoodsItem';
 import Preloader from './ui/Preloader';
+import ButtonContent from './ui/ButtonContent';
 
 const Goods = ({ goods = [], isLoading }) => {
   const [limit, setLimit] = useState(6);
   const slicedGoods = () => goods.slice(0, limit);
-  const showMore = () => {
-    if (limit <= goods.length) {
-      setLimit(limit + 6);
+  const hideContent = () => slicedGoods().slice(0, setLimit(6));
+  const showMore = () => setLimit(limit + 6);
+  const checkContent = () => {
+    if (limit < goods.length) {
+      showMore();
+    } else {
+      hideContent();
     }
   };
-
-  const hideContent = () => slicedGoods().slice(0, setLimit(6));
 
   return (
     <section className='catalog'>
@@ -27,15 +30,12 @@ const Goods = ({ goods = [], isLoading }) => {
               ))}
             </ul>
           )}
-          {slicedGoods().length < goods.length ? (
-            <button className='catalog__show-more' onClick={showMore}>
-              Show more
-            </button>
-          ) : (
-            <button className='catalog__hide' onClick={hideContent}>
-              Hide content
-            </button>
-          )}
+          <ButtonContent
+            slicedGoods={slicedGoods}
+            checkContent={checkContent}
+            isLoading={isLoading}
+            goods={goods}
+          />
         </div>
       </div>
     </section>
