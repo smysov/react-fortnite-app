@@ -8,6 +8,8 @@
 @import './components/_catalog';
 @import './components/_goods';
 @import './components/_preloader';
+@import './components/_cart';
+@import './components/_modal-cart';
 
 *,
 *:before,
@@ -55,6 +57,10 @@ body {
     background: #cf7a88;
     border-radius: 5px;
   }
+
+  &.is-hidden {
+    overflow: hidden;
+  }
 }
 
 h1,
@@ -85,6 +91,7 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  background: none;
 }
 
 ul,
