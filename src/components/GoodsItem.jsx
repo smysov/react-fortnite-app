@@ -1,4 +1,11 @@
-const GoodsItem = ({ image, name: title, description, price }) => {
+const GoodsItem = ({
+  image,
+  name: title,
+  description,
+  price,
+  addToCart,
+  id,
+}) => {
   const titleCapitalzed = () => {
     return title
       ? `${title[0].toUpperCase()}${title.slice(1).toLowerCase()}`
@@ -19,7 +26,11 @@ const GoodsItem = ({ image, name: title, description, price }) => {
       <h2 className='goods__title'>{titleCapitalzed()}</h2>
       <p className='goods__description'>{descriptionCapitalzed()}</p>
       <p className='goods__price'>{price} $</p>
-      <button className='goods__buy'>Add cart</button>
+      <button
+        className='goods__buy'
+        onClick={() => addToCart({ title, price, id })}>
+        Add cart
+      </button>
     </li>
   );
 };

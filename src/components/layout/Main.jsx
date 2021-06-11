@@ -23,6 +23,28 @@ function Main() {
     document.body.classList.remove('is-hidden');
   };
 
+  const addingGoodsToCart = (product) => {
+    const newProduct = {
+      ...product,
+      quantity: 1,
+    };
+    if (order.length) {
+      let isProductExists = false;
+      order.map((item) => {
+        if (item.id === newProduct.id) {
+          isProductExists = true;
+          item.quantity += 1;
+        }
+        return order;
+      });
+      if (!isProductExists) {
+        setOrder([...order, newProduct]);
+      }
+    } else {
+      setOrder([...order, newProduct]);
+    }
+  };
+
   useEffect(() => {
     setIsLoading(true);
     fetch(`${API_URL}/shop?lang=en`, {
@@ -47,9 +69,15 @@ function Main() {
 
   return (
     <main className='main-content'>
-      <Goods goods={goods} isLoading={isLoading} />
+      <Goods
+        goods={goods}
+        isLoading={isLoading}
+        addToCart={addingGoodsToCart}
+      />
       <Cart openCart={openCart} quantity={order.length} />
-      {isOpenCart ? <ModalCart closeCart={closeCart} modalRef={modal} /> : null}
+      {isOpenCart ? (
+        <ModalCart closeCart={closeCart} modalRef={modal} order={order} />
+      ) : null}
     </main>
   );
 }

@@ -77,9 +77,13 @@
   }
 
   &__info {
-    margin-right: 15px;
+    margin-right: 10px;
 
     @include phone {
+      margin-right: 15px;
+    }
+
+    @include tablets {
       margin-right: 20px;
     }
   }
@@ -92,15 +96,29 @@
     @include phone {
       font-size: 18px;
     }
+
+    @include tablets {
+      font-size: 22px;
+    }
+  }
+
+  &__price {
+    margin-right: auto;
   }
 }
 
 .cart-goods {
   &__count-buttons {
     display: flex;
-    align-items: flex-start;
-    column-gap: 8px;
-    margin-right: auto;
+    align-items: center;
+    column-gap: 5px;
+    margin-right: 10px;
+
+    @include phone {
+      column-gap: 10px;
+      margin-right: 20px;
+      align-items: flex-end;
+    }
   }
 
   &__button {
@@ -141,6 +159,10 @@
     @include phone {
       font-size: 16px;
     }
+
+    @include tablets {
+      font-size: 18px;
+    }
   }
 }
 
@@ -164,6 +186,20 @@
     &::after {
       @extend .cart-goods__remove::before;
       transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &__price {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+
+    @include phone {
+      font-size: 16px;
+    }
+
+    @include tablets {
+      font-size: 18px;
     }
   }
 
