@@ -45,6 +45,11 @@ function Main() {
     }
   };
 
+  const removingGoodsToCart = (id) => {
+    const newOrder = order.filter((item) => item.id !== id);
+    setOrder(newOrder);
+  };
+
   const totalPrice = () => {
     return order.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
@@ -85,6 +90,7 @@ function Main() {
           modalRef={modal}
           order={order}
           total={totalPrice}
+          removeFromCart={removingGoodsToCart}
         />
       ) : null}
     </main>

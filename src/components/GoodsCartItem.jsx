@@ -1,4 +1,4 @@
-const GoodsCartItem = ({ title, quantity, price }) => {
+const GoodsCartItem = ({ title, id, quantity, price, removeFromCart }) => {
   const titleCapitalzed = () => {
     return `${title[0].toUpperCase()}${title.slice(1).toLowerCase()}`;
   };
@@ -19,7 +19,9 @@ const GoodsCartItem = ({ title, quantity, price }) => {
       <div className='cart-goods__price'>
         <p className='cart-goods__text'>{price * quantity}$</p>
       </div>
-      <button className='cart-goods__remove'></button>
+      <button
+        className='cart-goods__remove'
+        onClick={() => removeFromCart(id)}></button>
     </li>
   );
 };
