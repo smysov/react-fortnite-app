@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+<h1 align="center">Fortnite shop</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
 
-## Available Scripts
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/smysov/react-fortnite-app?style=plastic">
 
-In the project directory, you can run:
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/smysov/react-fortnite-app?style=plastic">
 
-### `yarn start`
+<img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/smysov/react-fortnite-app?style=plastic">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/smysov/react-fortnite-app?style=plastic">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/smysov/react-fortnite-app/total?style=plastic">
 
-### `yarn test`
+<img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/smysov/react-fortnite-app?label=package.json&style=plastic">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</p>
 
-### `yarn build`
+Fortnite shop written in React using the SCSS preprocessor.
+The application implements:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Show more and hide products button
+- [x] Adding to Cart
+- [x] Deleting from the trash
+- [x] Changes in the number of items in the shopping cart
+- [x] Preloader during product loading
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center">
+  <img src="https://i.ibb.co/Kx9Hhvy/preview.png"></img>
+</p>
 
-### `yarn eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+First you need to clone repository
+Before installing dependencies and running the project,
+make sure that you have the latest version of Node installed.js & **YARN**
+Install the dependencies and devDependencies and start the server.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ git clone git@github.com:smysov/react-fortnite-app.git or https://github.com/smysov/react-fortnite-app.git
+$ cd react-fortnite-app
+$ yarn or yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+| Script  | Purpose                                           |
+| ------- | ------------------------------------------------- |
+| _start_ | Compiles and hot-reloads for **development** mode |
+| _build_ | Compiles and minifies for **production**          |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### To run the script:
 
-## Learn More
+\$ yarn **name-script**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Build Setup
