@@ -54,5 +54,3 @@ $ yarn or yarn install
 #### To run the script:
 
 \$ yarn **name-script**
-
-## Build Setup
