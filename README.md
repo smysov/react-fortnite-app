@@ -21,7 +21,7 @@ The application implements:
 
 - [x] Show more and hide products button
 - [x] Adding to Cart
-- [x] Deleting from the trash
+- [x] Deleting from Cart
 - [x] Changes in the number of items in the shopping cart
 - [x] Preloader during product loading
 
