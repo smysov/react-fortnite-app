@@ -31,6 +31,8 @@ The application implements:
   <img src="https://i.ibb.co/Kx9Hhvy/preview.png"></img>
 </p>
 
+# [View demo](https://fortnite-online-store.herokuapp.com/)
+
 ## Installation
 
 First you need to clone repository

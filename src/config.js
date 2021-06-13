@@ -1,4 +1,4 @@
-const API_URL = 'https://fortniteapi.io/v1';
-const API_KEY = 'b82a2028-039bb12c-82c97414-1c588263';
+const API_URL = process.env.REACT_APP_API_URL;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export { API_URL, API_KEY };

@@ -36,9 +36,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "express": "^4.17.1",
-    "express-favicon": "^2.0.1",
-    "path": "^0.12.7"
-  }
+  "devDependencies": {}
 }
